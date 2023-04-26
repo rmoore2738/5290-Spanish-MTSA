@@ -11,11 +11,7 @@
   cursor: pointer;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
+
 
 .p-2 {
   height:24rem;
