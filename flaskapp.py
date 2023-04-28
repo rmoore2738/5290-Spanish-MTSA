@@ -78,13 +78,13 @@ def translate_route():
     #with open('file.json', 'w') as f:
         #json.dump(request.form, f)
     if request.method == 'POST' and form.validate():
-        spanish_sentence = request.form.to_dict('moviereview')
-        spanish_sentence = str(spanish_sentence)
-        spanish_sentence = spanish_sentence.removeprefix("{'moviereview': '")
-        spanish_sentence = spanish_sentence.removesuffix("', 'submit_btn': 'Translate'}")
+        spanish = request.form.to_dict('moviereview')
+        spanish = str(spanish)
+        spanish = spanish.removeprefix("{'moviereview': '")
+        spanish = spanish.removesuffix("', 'submit_btn': 'Translate'}")
         #if spanish_sentence:
-        translated_sentence = translate(spanish_sentence)
-        return render_template('translate.html',content=spanish_sentence,translate=translated_sentence)
+        translated_sentence = translate(spanish)
+        return render_template('translate.html',content=spanish,translate=translated_sentence)
             #return jsonify({"translation": translated_sentence})
         #else:
     return render_template('reviewform.html', form=form)
