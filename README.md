@@ -16,7 +16,3 @@ Movie reviews are a great way for viewers to explore new genres and participate 
 - Evaluate the machine translation system by scoring how much of the original meaning of the review is kept. This will be done using the C-DAC GIST MT tool which is designed to evaluate machine translations. Adjust the model accordingly. 
 - Evaluate the sentiment analysis system by comparing the predicted score (positive or negative) to the labeled score and observe a basic confusion matrix of true positives, true negatives, false positives and false negatives to evaluate what errors we may have in the model.
 
-## UI Mockup
-![UI Mockup](./mock.png)
-
-
