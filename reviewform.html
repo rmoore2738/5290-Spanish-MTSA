@@ -10,50 +10,55 @@
   <!-- bootstrap js -->
   </head>
   <body>
-     <!-- two columns -->
-     <div class="container p-3">    
-      <div class="row">
-        <div class="col">
-          <!-- two rows -->
-          <div class="row">
-            <div class="col">
-          <!-- title for page -->
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <h1 style="text-align: center;">Movie Review Translation and Analysis</h1>
-                <br>
-              </div>
-            </div>
-            
+    <h1 style="text-align: center;">Movie Review Translation and Analysis</h1>
+    <!-- two columns -->
+    <div class="container p-3">    
+    <div class="row">
+      <div class="col">
+        <!-- two rows -->
+        <div class="row">
+          <div class="col">
             <!-- large text input box with buttons -->
-            <h3>Sentiment of Movie Review:</h3>
-                  {% from "_formhelpers.html" import render_field %}
-                  <form method=post action="/results">
-                    <dl>
-                    {{ render_field(form.moviereview, cols='50', rows='10') }}
-                    </dl>
-                    <div>
-                      <input type=submit class="btn btn-primary" value='Get Sentiment' name='submit_btn'>
-                    </div>
-                </form>
-                <br>
-                <br>
-            <!-- display text -->
-            <div class="row">
-              <div class="col"></div> 
-                <h3>Translate Movie Review:</h3>
+            <h4>Sentiment Analysis of English Movie Review:</h4>
+                {% from "_formhelpers.html" import render_field %}
                 <form method=post action="/results">
                   <dl>
-                  {{ render_field(form.moviereview, cols='50', rows='10') }}
+                  {{ render_field(form.moviereview, cols='50', rows='8') }}
                   </dl>
                   <div>
-                    <input type=submit class="btn btn-primary" value='Translate' name='submit_btn'>
+                    <input type=submit class="btn btn-primary" value='Get Sentiment' name='submit_btn'>
                   </div>
               </form>
-          
+          </div>
+        </div>
+        <br>
+        <br>
+        <!-- display text -->
+        <div class="row">
+          <div class="col"></div> 
+            <form method=post action="/translate">
+              <h4>Translate Spanish Movie Review:</h4>
+              <dl>
+              {{ render_field(form.moviereview, cols='50', rows='8') }}
+              </dl>
+              <div>
+                <input type=submit class="btn btn-primary" value='Translate' name='submit_btn'>
+              </div>
+          </form>
+        </div>
       </div>
-    </div>
+      <div class="col" style = "text-align: right;">  
+        <!-- large text input box with buttons -->
+        <h4>Sentiment Analysis of Spanish Movie Review:</h4>
+              {% from "_formhelpers.html" import render_field %}
+              <form method=post action="/results_spanish">
+                <dl>
+                {{ render_field(form.moviereview, cols='50', rows='8') }}
+                </dl>
+                <div>
+                  <input type=submit class="btn btn-primary" value='Get Sentiment' name='submit_btn'>
+                </div>
+            </form>
   </div>
 </div>
 </body>
